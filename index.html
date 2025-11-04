@@ -1,338 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vivek portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vivek Kumar | Portfolio</title>
 
-        body {
-            background-color: rgb(0, 0, 40);
-            color: white;
-            font-family: 'Poppins', sans-serif;
-        }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 
-        nav {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 90px;
-            background-color: rgb(1, 1, 47);
-        }
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-        nav ul {
-            display: flex;
-            justify-content: center;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        nav ul li {
-            list-style: none;
-            margin: 0px 23px;
+    body {
+      font-family: "Poppins", sans-serif;
+      background: radial-gradient(circle at top left, #0a0a2a, #000018);
+      color: white;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
 
-        }
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      padding: 0 8%;
+      background: rgba(10, 10, 35, 0.9);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
 
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-        }
+    nav .left {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #c8a6ff;
+    }
 
-        nav ul li a:hover {
-            color: rgb(150, 150, 245);
-            font-size: 1.04rem;
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
 
-        }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      transition: all 0.3s ease;
+    }
 
-        main hr {
-            border: 0;
-            background-color: rgb(158, 158, 244);
-            height: 1.2px;
-            margin: 20px 84px;
-            opacity: 20%;
-        }
+    nav ul li a:hover {
+      color: #a77bff;
+    }
 
-        .left {
-            font-size: 1.5rem;
-        }
+    /* Hero Section */
+    .firstsection {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 120px 8%;
+      flex-wrap: wrap;
+    }
 
-        .firstsection {
-            display: flex;
-            justify-content: space-around;
-            /* margin: 50px 0; */
-            margin: 50px 0;
-            align-items: center;
-        }
+    .leftsection {
+      flex: 1;
+      min-width: 300px;
+      font-size: 2rem;
+    }
 
-        .firstsection>div {
-            width: 30%;
+    .leftsection .purple {
+      color: #b47bff;
+    }
 
-        }
+    #element {
+      color: #9b8cff;
+      font-weight: 600;
+    }
 
-        .leftsection {
-            font-size: 2rem;
-            /* margin: 70px; */
-        }
+    .leftsection .buttons {
+      margin-top: 40px;
+    }
 
-        .text-gray {
-            color: gray;
-        }
+    .btn {
+      padding: 12px 25px;
+      margin-right: 15px;
+      background: linear-gradient(135deg, #7f5af0, #5f37e0);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
-        .rightsection img {
-            width: 80%;
-        }
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px #7f5af0;
+    }
 
-        .purple {
-            color: #d2a2ff;
-        }
+    .rightsection img {
+      width: 330px;
+      height: 330px;
+      border-radius: 50%;
+      border: 3px solid #b47bff;
+      box-shadow: 0 0 25px rgba(180, 123, 255, 0.5);
+      animation: float 4s ease-in-out infinite;
+      object-fit: cover;
+    }
 
-        #element {
-            color: rgb(148, 148, 243);
-        }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
 
-        .secondsection .box {
-            background-color: white;
-            width: 77vw;
-            height: 2px;
-            margin: 56px 0;
-            display: flex;
-        }
+    /* About Section */
+    .about {
+      padding: 80px 8%;
+      background: rgba(255, 255, 255, 0.03);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-        .secondsection {
-            max-width: 80vw;
-            margin: auto;
-            height: 80vh;
-        }
+    .about h1 {
+      text-align: center;
+      color: #b47bff;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
 
-        .secondsection h1 {
-            font-size: 1.9rem;
-        }
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
 
-        .secondsection .vertical {
-            height: 93px;
-            width: 1px;
-            background-color: white;
-            margin: 0 120px;
-        }
+    .about-card {
+      flex: 1;
+      min-width: 280px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 25px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
 
-        .image-top {
-            width: 23px;
-            position: relative;
-            top: -32px;
-            left: -9px;
-        }
+    .about-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px rgba(180, 123, 255, 0.3);
+    }
 
-        .vertical-title {
-            position: relative;
-            top: 75px;
-            width: 150px;
-            font-size: 14px;
+    .about-card h3 {
+      color: #d7c6ff;
+      margin-bottom: 10px;
+    }
 
-        }
+    .about-card p, .about-card ul {
+      color: #aaa;
+      font-size: 0.95rem;
+    }
 
-        .vertical-desc {
-            position: relative;
-            top: 86px;
-            color: gray;
-            width: 150px;
-            font-size: 9px;
+    .about-card ul li {
+      margin-bottom: 6px;
+    }
 
-        }
+    /* Work Section */
+    .secondsection {
+      padding: 80px 8%;
+      text-align: center;
+    }
 
-        footer {
-            background-color: #0e0e1a;
+    .secondsection h1 {
+      margin-bottom: 50px;
+      font-size: 2rem;
+      color: #b47bff;
+    }
 
-        }
+    .experience-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
 
-        footer ul {
-            list-style: none;
-        }
+    .exp-card {
+      width: 250px;
+      padding: 20px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
 
-        .footer {
-            display: flex;
-            padding: 23px 122px;
-            justify-content: space-evenly;
-        }
+    .exp-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(180, 123, 255, 0.3);
+    }
 
-        .footer>div {
-            width: 223px;
-        }
+    .exp-card img {
+      width: 40px;
+      margin-bottom: 10px;
+    }
 
-        footer .footer-rights {
-            text-align: center;
-            color: gray;
-            padding: 12px 0;
-        }
-        .leftsection .buttons{
-            padding: 45px 0;
-        }
+    .exp-card h3 {
+      color: #d7c6ff;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
 
-        .leftsection .btn {
-            padding: 12px;
-            background-color: #2e284c;
-            color: white;
-            border: 2px solid white;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 20px;
-        }
-    </style>
+    .exp-card p {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* Footer */
+    footer {
+      background: #0e0e1a;
+      text-align: center;
+      padding: 30px 10px;
+      color: gray;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #b47bff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .firstsection {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .rightsection img {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 30px;
+      }
+
+      .leftsection {
+        font-size: 1.5rem;
+      }
+
+      .about-content {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="left">Vivek Portfolio</div>
-            <div class="right">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">About</a></li>
-                    <li><a href="/">Service</a></li>
-                    <li><a href="/">Contact me</a></li>
-                    <li><a href="/">Projects</a></li>
-                </ul>
-            </div>
+  <nav>
+    <div class="left">Vivek Portfolio</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-        </nav>
-    </header>
-    <main>
-        <section class="firstsection">
-            <div class="leftsection">
-                Hi, My name is
-                <span class="purple">Vivek</span>
+  <!-- Hero Section -->
+  <section class="firstsection" id="home">
+    <div class="leftsection" data-aos="fade-right">
+      Hi, My name is <span class="purple">Vivek</span>
+      <div>and I am a passionate</div>
+      <span id="element"></span>
+      <div class="buttons">
+        <button class="btn" onclick="window.open('Vivek Resume New One.pdf')">Download Resume</button>
+        <button class="btn" onclick="window.open('https://github.com/vkshyp','_blank')">Visit GitHub</button>
+      </div>
+    </div>
+    <div class="rightsection" data-aos="fade-left">
+      <img src="pic.png.webp" alt="Vivek Kumar" />
+    </div>
+  </section>
 
-                <div>and I am a passionate </div>
-                <span id="element"></span>
-                <div class="buttons">
-                    <button class="btn">Download resume</button>
-                    <button class="btn">Visit github</button>
-                </div>
-            </div>
-            <div class="rightsection">
-                <img src="wb.png.webp" alt="">
-            </div>
-        </section>
-        <hr>
-        <section class="secondsection">
-            <span class="text-gray">What I have done so far</span>
-            <h1>Work Experience</h1>
-            <div class="box">
-                <div class="vertical">
-                    <img class="image-top" src="html.png" alt="">
-                    <div class="vertical-title">
-                        HTML Developer (2010-2012)
-                    </div>
-                    <div class="vertical-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eaque ducimus hic inventore
-                        nihil. Eaque sequi, blanditiis ea numquam illo ipsa temporibus labore!
-                    </div>
-                </div>
-                <div class="vertical">
-                    <img class="image-top" src="facebook.png" alt="">
-                    <div class="vertical-title">
-                        Node.js Developer (2010-2012)
-                    </div>
-                    <div class="vertical-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eaque ducimus hic inventore
-                        nihil. Eaque sequi, blanditiis ea numquam illo ipsa temporibus labore!
-                    </div>
-                </div>
-                <div class="vertical">
-                    <img class="image-top" src="twitter.png" alt="">
-                    <div class="vertical-title">
-                        Js Developer (2010-2012)
-                    </div>
-                    <div class="vertical-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eaque ducimus hic inventore
-                        nihil. Eaque sequi, blanditiis ea numquam illo ipsa temporibus labore!
-                    </div>
-                </div>
-                <div class="vertical">
-                    <img class="image-top" src="instagram.png" alt="">
-                    <div class="vertical-title">
-                        Front-End Developer (2010-2012)
-                    </div>
-                    <div class="vertical-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eaque ducimus hic inventore
-                        nihil. Eaque sequi, blanditiis ea numquam illo ipsa temporibus labore!
-                    </div>
-                </div>
-                <!-- <div class="vertical">
-                    <img class="image-top" src="youtube.png" alt="">
-                    <div class="vertical-title">
-                        Full-stack Developer (2010-2012)
-                    </div>
-                    <div class="vertical-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eaque ducimus hic inventore
-                        nihil. Eaque sequi, blanditiis ea numquam illo ipsa temporibus labore!
-                    </div>
-                </div> -->
+  <!-- About Section -->
+  <section class="about" id="about">
+    <h1 data-aos="fade-up">About Me</h1>
+    <div class="about-content">
+      <div class="about-card" data-aos="flip-left">
+        <h3>Who I Am</h3>
+        <p>
+          I’m Vivek Kumar, a B.Tech Computer Science student at DIT University (Full Stack & DevOps).
+          Passionate about web development, automation, and building impactful tech solutions.
+        </p>
+      </div>
+      <div class="about-card" data-aos="flip-left">
+        <h3>Education</h3>
+        <ul>
+          <li><b>DIT University, Dehradun</b> — B.Tech CSE (2022–2026)</li>
+          <li><b>St. Mary’s Sr. Sec. School</b> — 12th: 60% | 10th: 71%</li>
+        </ul>
+      </div>
+      <div class="about-card" data-aos="flip-left">
+        <h3>Key Skills</h3>
+        <ul>
+          <li>Java, JavaScript, HTML, CSS</li>
+          <li>React.js, MySQL, Node.js</li>
+          <li>Web Development, DevOps</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-                <div class="vertical">
+  <!-- Experience Section -->
+  <section class="secondsection" id="work">
+    <h1 data-aos="fade-up">Work Experience</h1>
+    <div class="experience-grid">
+      <div class="exp-card" data-aos="flip-left">
+        <img src="html.png" alt="HTML" />
+        <h3>HTML Developer</h3>
+        <p>Developed responsive web interfaces and improved performance through semantic HTML5 structure.</p>
+      </div>
+      <div class="exp-card" data-aos="flip-left">
+        <img src="node.png" alt="Node.js" />
+        <h3>Node.js Developer</h3>
+        <p>Built backend REST APIs and integrated MongoDB, Express, and JWT authentication.</p>
+      </div>
+      <div class="exp-card" data-aos="flip-left">
+        <img src="js.png" alt="JavaScript" />
+        <h3>JS Developer</h3>
+        <p>Created interactive UIs using ES6, React components, and optimized event handling.</p>
+      </div>
+      <div class="exp-card" data-aos="flip-left">
+        <img src="frontend.png" alt="Frontend" />
+        <h3>Frontend Developer</h3>
+        <p>Developed modern, pixel-perfect websites using CSS3, animations, and Flexbox/Grid layouts.</p>
+      </div>
+    </div>
+  </section>
 
-                </div>
+  <!-- Footer -->
+  <footer id="contact">
+    © 2025 Vivek Kumar | Designed with 💜 by <a href="https://github.com/vkshyp" target="_blank">Vivek</a><br />
+    📞 +91-7668511305 | ✉️ <a href="mailto:kashyapvivek566@gmail.com">kashyapvivek566@gmail.com</a>
+  </footer>
 
+  <!-- Typed.js -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    var typed = new Typed("#element", {
+      strings: ["Web Developer", "Full Stack Developer", "DevOps Enthusiast", "Problem Solver"],
+      typeSpeed: 60,
+      backSpeed: 30,
+      loop: true,
+    });
+  </script>
 
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="footer">
-            <div class="footer-first">
-                <h3>Vivek's Developer Portfolio</h3>
-            </div>
-            <div class="footer-second">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Services</li>
-
-                </ul>
-            </div>
-            <div class="footer-third">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Services</li>
-
-                </ul>
-            </div>
-            <div class="footer-fouth">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Services</li>
-
-                </ul>
-            </div>
-        </div>
-        <div class="footer-rights">
-            copyright &#169; vivekportfolio | All rights
-        </div>
-    </footer>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-        var typed = new Typed('#element', {
-            strings: ['Web Developer', 'Graphic designer', 'Web Designer',],
-            typeSpeed: 50,
-        });
-    </script>
+  <!-- AOS Animation -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 </body>
-
 </html>
